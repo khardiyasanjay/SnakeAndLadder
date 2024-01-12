@@ -4,6 +4,7 @@ import org.example.entity.Ladder;
 import org.example.entity.Player;
 import org.example.entity.Snake;
 import org.example.entity.SnakeAndLadderBoard;
+import org.example.exception.SnakeException;
 
 import java.util.*;
 
@@ -31,7 +32,7 @@ public class SnakeAndLadderService {
     }
 
     /**
-     * ====Setters for making the game more extensible====
+     * Setters for making the game more extensible
      */
 
     public void setNoOfDices(int noOfDices) {
@@ -47,7 +48,7 @@ public class SnakeAndLadderService {
     }
 
     /**
-     * ==================Initialize board==================
+     * Initialize board
      */
 
     public void setPlayers(List<Player> players) {
@@ -129,7 +130,7 @@ public class SnakeAndLadderService {
         return currentNumberOfPlayers < initialNumberOfPlayers;
     }
 
-    public void startGame() {
+    public void startGame(){
         while (!isGameCompleted()) {
             int totalDiceValue = getTotalValueAfterDiceRolls(); // Each player rolls the dice when their turn comes.
             Player currentPlayer = players.poll();
@@ -143,7 +144,4 @@ public class SnakeAndLadderService {
         }
     }
 
-    /**
-     * =======================================================
-     */
 }
